@@ -18,3 +18,19 @@ Login details:
 Username: View
 
 Password: TwKpDi3h4R4AeE233wMgg8y230r1I
+
+Software used in development:
+
+* Pycharm
+* Git
+* Visual code
+* Mobirise
+
+Framework and add-ons:
+
+* Django
+* Pillow
+
+Language:
+
+* Python
