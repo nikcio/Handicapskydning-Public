@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headextend %}
+{% endblock%}
+{% block content %}
+<section class="mbr-section content4 cid-rGvQySLYXy" id="content4-1a">
+  <div class="container">
+    <div class="media-container-row">
+      <div class="title col-12 col-md-8">
+        <h2 class="align-center pb-3 mbr-fonts-style display-1">
+          Skydebanerne
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="carousel slide cid-rGvQhIPdCT"
+  data-interval="false"
+  id="slider2-19"
+>
+  <div class="container content-slider">
+    <div class="content-slider-wrap">
+      <div>
+        <div
+          class="mbr-slider slide carousel"
+          data-pause="true"
+          data-keyboard="false"
+          data-ride="carousel"
+          data-interval="2000"
+        >
+          <ol class="carousel-indicators">
+            {% for lane in object_list %}
+            <li
+              data-app-prevent-settings=""
+              data-target="#slider2-19"
+              {% if forloop.first %}
+              class=" active"
+              {% endif %}
+              data-slide-to="{{lane.id}}"
+            ></li>
+            {% endfor %}
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            {% for lane in object_list %}
+            {% if forloop.first %}
+            <div
+              class="carousel-item slider-fullscreen-image active"
+              data-bg-video-slide="false"
+              style="background-image: url({% static '' %}{{lane.picture}});"
+            >
+              {% else %}
+                          <div
+              class="carousel-item slider-fullscreen-image"
+              data-bg-video-slide="false"
+              style="background-image: url({% static '' %}{{lane.picture}});"
+            >
+                            {% endif %}
+              <div class="container container-slide">
+                <div class="image_wrapper">
+                  <div
+                    class="mbr-overlay"
+                    style="background-color: rgb(0, 0, 0);"
+                  ></div>
+                  <img src="{% static '' %}{{lane.picture}}" alt="" title="" />
+                  <div class="carousel-caption justify-content-center">
+                    <div class="col-10 align-center"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a
+            data-app-prevent-settings=""
+            class="carousel-control carousel-control-prev"
+            role="button"
+            data-slide="prev"
+            href="#slider2-19"
+            ><span aria-hidden="true" class="mbri-left mbr-iconfont"></span
+            ><span class="sr-only">Previous</span></a
+          ><a
+            data-app-prevent-settings=""
+            class="carousel-control carousel-control-next"
+            role="button"
+            data-slide="next"
+            href="#slider2-19"
+            ><span aria-hidden="true" class="mbri-right mbr-iconfont"></span
+            ><span class="sr-only">Next</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mbr-section article content1 cid-rGvReQwmss" id="content1-1c">
+  <div class="container">
+    <div class="media-container-row">
+      <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+        <p>
+          Skydning foregår i et attraktivt miljø og der er dygtige trænere og
+          instruktører i klubberne. Våben og udstyr kan lånes, så det kræver
+          ikke den store investering at komme igang.
+        </p>
+        <p>
+          Der skydes med luftvåben og med cal.22 våben, både riffel og pistol.
+          Skytterne er opdelt i forskellige klasser, alt efter hvilket handicap
+          man har - eller rettere, hvilken grad af funktionsnedsættelse.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scriptextend %}
+  <script src="{% static 'assets/ytplayer/jquery.mb.ytplayer.min.js' %}"></script>
+  <script src="{% static 'assets/vimeoplayer/jquery.mb.vimeo_player.js' %}"></script>
+  <script src="{% static 'assets/slidervideo/script.js' %}"></script>
+{% endblock %}

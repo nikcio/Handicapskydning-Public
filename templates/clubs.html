@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headextend %}
+  <link rel="stylesheet" href="{% static 'assets/datatables/data-tables.bootstrap4.min.css' %}">
+{% endblock%}
+{% block content %}
+<section class="section-table cid-rGvMVXrOom" id="table1-11">
+  <div class="container container-table">
+    <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-1">
+      Klubber
+    </h2>
+    <h3
+      class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-2"
+    >
+      For yderligere oplysninger om klubberne se
+      <a href="http://www.dhif.dk/doa/default.asp?action=organisation"
+        >DHIFs hjemmeside</a
+      >
+    </h3>
+    <div class="table-wrapper">
+      <div class="container">
+        <div class="row search">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <div class="dataTables_filter">
+              <label class="searchInfo mbr-fonts-style display-7">Søg:</label>
+              <input class="form-control input-sm" disabled="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container scroll">
+        <table class="table isSearch" cellspacing="0">
+          <thead>
+            <tr class="table-heads ">
+              <th class="head-item mbr-fonts-style display-7">
+                Navn
+              </th>
+              <th class="head-item mbr-fonts-style display-7">By</th>
+              <th class="head-item mbr-fonts-style display-7">
+                Hjemmeside
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for club in object_list %}
+            <tr>
+              <td class="body-item mbr-fonts-style display-7">
+               {{club.name}}
+              </td>
+              <td class="body-item mbr-fonts-style display-7">{{club.city}}</td>
+              <td class="body-item mbr-fonts-style display-7">
+                <a href="{{club.link}}" target="_blank"
+                  >Se hjemmeside</a
+                >
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="container table-info-container">
+        <div class="row info">
+          <div class="col-md-6">
+            <div class="dataTables_info mbr-fonts-style display-7">
+              <span class="infoBefore">Showing</span>
+              <span class="inactive infoRows"></span>
+              <span class="infoAfter">entries</span>
+              <span class="infoFilteredBefore">(filtered from</span>
+              <span class="inactive infoRows"></span>
+              <span class="infoFilteredAfter"> total entries)</span>
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+    {% block scriptextend %}
+  <script src="{% static 'assets/datatables/jquery.data-tables.min.js' %}"></script>
+  <script src="{% static 'assets/datatables/data-tables.bootstrap4.min.js' %}"></script>
+{% endblock %}
+

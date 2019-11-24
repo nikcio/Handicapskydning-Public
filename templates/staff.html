@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headextend %}
+
+
+{% endblock %}
+
+{% block content %}
+{% for department in object_list %}
+  <section class="testimonials1 cid-rGvGdK3YoS" id="testimonials1-t">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 align-center">
+                <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-2">
+                    {{department.name}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3 mt-2">
+        <div class="media-container-row">
+            {% for member in staff_member %}
+            {% if member.department == department %}
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <a href="{{member.id}}">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="{% static '' %}{{ member.profile_image }}" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">---------</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                             {{member.name}}</div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                               {{member.title}}</small>
+                    </div>
+                        </a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>   
+</section>
+{% endfor %}
+    
+    <!--Container-->
+    <div class="container">
+        <div class="row">
+            <!--Titles-->
+            <div class="title col-12">
+                <h2 class="align-left mbr-fonts-style display-1">Kontakt Os:</h2>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="wrapper">
+                            <span class="iconfont-wrapper">
+                                <span class="amp-iconfont icon fa-phone fa"></span>
+                            </span>
+                            <div class="b-info b-phone">
+                                <h5 class="align-left mbr-fonts-style display-5">
+                                    Phone:
+                                </h5>
+                                <p class="mbr-text align-left mbr-fonts-style display-7"><a href="tel:+4510101010">+45 10 10 10 10</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="wrapper">
+                            <span class="iconfont-wrapper">
+                                <span class="amp-iconfont icon fa-comment-o fa"></span>
+                            </span>
+                            <div class="b-info b-mail">
+                                <h5 class="align-left mbr-fonts-style display-5">
+                                    E-mail:
+                                </h5>
+                                <p class="mbr-text align-left mbr-fonts-style display-7">
+                                    <a href="mailto:handicapskydning@gmail.com">handicapskydning@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

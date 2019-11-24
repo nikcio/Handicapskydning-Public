@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headextend %}
+  <link rel="stylesheet" href="{% static 'assets/gallery/style.css' %}">
+
+{% endblock %}
+
+{% block content %}
+  <section class="mbr-section content4 cid-rGvFh5dlI4" id="content4-r">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-1">
+                    Galleri</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% for collection in collections %}
+<section class="mbr-section content4 cid-rGvFoey3W9" id="content4-s">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    {{collection.name}} - {{collection.year}}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-gallery mbr-slider-carousel cid-rGvFbtSWhN" id="gallery1-q">
+    <div class="container">
+        <div>
+            <div class="mbr-gallery-row">
+                <div class="mbr-gallery-layout-default">
+                    <div>
+                        <div>
+                            {% for cpicture in object_list %}
+                            {% if cpicture.collection == collection %}
+                            <div class="mbr-gallery-item mbr-gallery-item--p1" data-video-url="false" data-tags="Awesome">
+                                <div href="#lb-gallery1-q" data-slide-to="{{cpicture.id}}" data-toggle="modal">
+                                <img src="{% static '' %}{{cpicture.picture}}" alt="" title="">
+                                <span class="icon-focus"></span>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+{% endblock %}
+
+{% block scriptextend %}
+  <script src="{% static 'assets/vimeoplayer/jquery.mb.vimeo_player.js' %}"></script>
+  <script src="{% static 'assets/masonry/masonry.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/gallery/player.min.js' %}"></script>
+  <script src="{% static 'assets/gallery/script.js' %}"></script>
+  <script src="{% static 'assets/slidervideo/script.js' %}"></script>
+{% endblock %}

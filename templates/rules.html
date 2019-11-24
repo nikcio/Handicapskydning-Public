@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headextend %}
+{% endblock%}
+{% block content %}
+<section class="mbr-section content4 cid-rGvP1kl3PT" id="content4-17">
+  <div class="container">
+    <div class="media-container-row">
+      <div class="title col-12 col-md-8">
+        <h2 class="align-center pb-3 mbr-fonts-style display-1">
+          Disciplin og regler
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+{% for dokument in object_list %}
+<section class="mbr-section content8 cid-rGvOiJCZvI" id="content8-12">
+  <div class="container">
+    <div class="media-container-row title">
+      <div class="col-12 col-md-8">
+        <div class="mbr-section-btn align-center">
+          <a
+            class="btn btn-primary display-2"
+            href="{% static '' %}{{dokument.file}}"
+            target="_blank"
+            >{{dokument.name}}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}
