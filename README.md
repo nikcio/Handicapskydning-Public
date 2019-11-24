@@ -1,4 +1,4 @@
-# Handicapskydning-V2
+# Handicapskydning-Public
 Remake of the original Handicapskydning wbsite
 * Author: Nikolaj Brask-Nielsen
 * Alias: Nikcio
