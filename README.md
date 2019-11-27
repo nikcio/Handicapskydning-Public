@@ -10,7 +10,7 @@ The project was benched half way through delveopment but I finished the core ele
 * Acessibllity fine tuneing
 * Polish (Mostly on the admin side)
 
-The Handicapskydning consitst of a frontend for the averge user and a admin backend for the personal managing the website.
+The Handicapskydning website consitsts of a frontend for the averge user and a admin backend for the personal managing the website.
 To see the admin page visit [Host ip]/admin
 
 Login details:
