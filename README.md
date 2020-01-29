@@ -1,17 +1,16 @@
 # Handicapskydning-Public
-Remake of the original Handicapskydning wbsite
+A remake of the original Handicapskydning website
 * Author: Nikolaj Brask-Nielsen
 * Alias: Nikcio
 
 This project was made to replace the current website on https://handicapskydning.dk/
 
-The project was benched half way through delveopment but I finished the core elemnets. This means the project is only missing:
+The project was benched halfway through development but I finished the core elements. This means the project is only missing:
 
 * Acessibllity fine tuneing
 * Polish (Mostly on the admin side)
 
-The Handicapskydning website consitsts of a frontend for the averge user and a admin backend for the personal managing the website.
-To see the admin page visit [Host ip]/admin
+The Handicapskydning website consists of a frontend for the average user and an admin backend for the person managing the website. To see the admin page visit [Host ip]/admin
 
 Login details:
 
